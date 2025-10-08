@@ -1,5 +1,7 @@
+#
+This project is an AI-powered medical assistant designed to provide accurate, human-understandable answers to general health-related questions. It leverages Generative AI, LangChain, and Mistral AI integrated with a semantic search database (Pinecone) to retrieve verified medical knowledge from trusted sources.
 
-
+The chatbot’s knowledge base is derived from The Gale Encyclopedia of Medicine, a comprehensive resource that explains diseases, diagnoses, treatments, and prevention in language accessible to the general public.
 	
 	
 #Tech Stack:
