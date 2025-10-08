@@ -3,8 +3,9 @@ This project is an AI-powered medical assistant designed to provide accurate, hu
 The chatbot’s knowledge base is derived from The Gale Encyclopedia of Medicine, a comprehensive resource that explains diseases, diagnoses, treatments, and prevention in language accessible to the general public.
 
 #Purpose
-The goal of this project is to make reliable medical information more accessible to everyday users, bridging the gap between professional medical literature and layperson understanding.
-###Tech Stack###
+	The goal of this project is to make reliable medical information more accessible to everyday users, bridging the gap between professional medical literature and layperson understanding.
+	
+#Tech Stack
 	-Languages & Frameworks:
 		*Python
 		*Flask (for backend & API handling)
