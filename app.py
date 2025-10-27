@@ -4,7 +4,7 @@ print("Starting Flask...")
 
 from flask import Flask,render_template,jsonify,request
 from src.helper import download_hugging_face_embedding
-from langchain_pinecone import PineconeVectorStore
+from langchain_community.vectorstores import Pinecone
 from langchain_mistralai import ChatMistralAI
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
@@ -30,7 +30,7 @@ embeddings=download_hugging_face_embedding()
 
 #Loading existing index:
 #Embed each chunk and upsert the embeddings into Pinecone
-docsearch=PineconeVectorStore.from_existing_index(index_name="medicalbot",embedding=embeddings)
+docsearch=Pinecone.from_existing_index(index_name="medicalbot",embedding=embeddings)
 
 #To retrive info from the knowledge base--the vector store
 retriever=docsearch.as_retriever(search_type="similarity",search_kwargs={"k":3})#It will show 3 relevant answers to the query
@@ -71,7 +71,7 @@ def ask():
     user_input = data.get("query", "")  # 🔹 Get 'query' key from the JSON
     
     if not user_input:
-        return jsonify({"answer": "⚠️ Please provide a valid question."})  # 🛑 Handle empty queries
+        return jsonify({"answer": "⚠️ Please provide a valid question."})  # 🛑 Handles empty queries
 
     print("User:", user_input)
 
