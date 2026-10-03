@@ -1,16 +1,27 @@
-sentence-transformers==2.2.2
-langchain
-langchain-community
-langchain-core
-langchain-openai
-langchain-experimental
-langchain-pinecone
-pinecone-client[grpc]
-sentence-transformers
-pypdf
-python-dotenv
-flask
-gunicorn
+# Direct dependencies only, pinned to versions verified together on Python 3.10.
+# Upgrade deliberately: bump a pin, reinstall, and re-test the app.
 
+# --- Web server ---
+flask==3.1.1
+flask-cors==6.0.5
+flask-limiter==4.1.1
+gunicorn==26.2.0
+python-dotenv==1.1.1
+
+# --- LangChain (stay on 0.3.x: langchain 1.0 removed langchain.chains) ---
+langchain==0.3.26
+langchain-core==0.3.68
+langchain-community==0.3.27
+langchain-text-splitters==0.3.8
+
+# --- Integrations: vector store, LLM, embeddings ---
+langchain-pinecone==0.2.8
+pinecone==7.3.0
+langchain-mistralai==0.2.11
+langchain-huggingface==0.3.0
+sentence-transformers==5.0.0
+
+# --- PDF loading (used by store_index.py) ---
+pypdf==5.7.0
 
 -e .
